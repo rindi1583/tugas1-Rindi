@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\jadwalKaryawanController;
 use App\Http\Controllers\API\JenisController;
+use App\Http\Controllers\API\KaryawanController;
 use App\Http\Controllers\API\KategoriController;
 use App\Http\Controllers\API\TransaksiController;
 use Illuminate\Http\Request;
@@ -40,3 +42,11 @@ Route::put('transaksi/update/{id}', [TransaksiController::class, 'update']);
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+
+Route::post('karyawan/store', [KaryawanController::class,'store']);
+Route::delete('karyawan/delete/{id}', [KaryawanController::class, 'destroy']);
+Route::put('karyawan/update/{id}', [KaryawanController::class, 'update']);
+
+Route::post('jadwal_karyawan/store', [jadwalKaryawanController::class,'store']);
+Route::delete('jadwal_karyawan/delete/{id}', [jadwalKaryawanController::class, 'destroy']);
+Route::put('jadwal_karyawan/update/{id}', [jadwalKaryawanController::class, 'update']);
